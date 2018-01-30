@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FA63BD25201245E9002EE0DA /* Todoey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoey.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA63BD25201245E9002EE0DA /* TodoSiri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoSiri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA63BD28201245E9002EE0DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA63BD2A201245E9002EE0DA /* TotoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotoListViewController.swift; sourceTree = "<group>"; };
 		FA63BD2D201245E9002EE0DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		FA63BD1C201245E9002EE0DA = {
 			isa = PBXGroup;
 			children = (
-				FA63BD27201245E9002EE0DA /* Todoey */,
+				FA63BD27201245E9002EE0DA /* TodoSiri */,
 				FA63BD26201245E9002EE0DA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,12 +50,12 @@
 		FA63BD26201245E9002EE0DA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FA63BD25201245E9002EE0DA /* Todoey.app */,
+				FA63BD25201245E9002EE0DA /* TodoSiri.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FA63BD27201245E9002EE0DA /* Todoey */ = {
+		FA63BD27201245E9002EE0DA /* TodoSiri */ = {
 			isa = PBXGroup;
 			children = (
 				FA63BD28201245E9002EE0DA /* AppDelegate.swift */,
@@ -65,7 +65,7 @@
 				FA63BD34201245E9002EE0DA /* Info.plist */,
 				FAFBD5A42015EA3100CC6389 /* DataModel */,
 			);
-			path = Todoey;
+			path = TodoSiri;
 			sourceTree = "<group>";
 		};
 		FAFBD5A42015EA3100CC6389 /* DataModel */ = {
@@ -105,9 +105,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FA63BD24201245E9002EE0DA /* Todoey */ = {
+		FA63BD24201245E9002EE0DA /* TodoSiri */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FA63BD37201245E9002EE0DA /* Build configuration list for PBXNativeTarget "Todoey" */;
+			buildConfigurationList = FA63BD37201245E9002EE0DA /* Build configuration list for PBXNativeTarget "TodoSiri" */;
 			buildPhases = (
 				FA63BD21201245E9002EE0DA /* Sources */,
 				FA63BD22201245E9002EE0DA /* Frameworks */,
@@ -117,9 +117,9 @@
 			);
 			dependencies = (
 			);
-			name = Todoey;
+			name = TodoSiri;
 			productName = Todoey;
-			productReference = FA63BD25201245E9002EE0DA /* Todoey.app */;
+			productReference = FA63BD25201245E9002EE0DA /* TodoSiri.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -138,7 +138,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FA63BD20201245E9002EE0DA /* Build configuration list for PBXProject "Todoey" */;
+			buildConfigurationList = FA63BD20201245E9002EE0DA /* Build configuration list for PBXProject "TodoSiri" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -151,7 +151,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FA63BD24201245E9002EE0DA /* Todoey */,
+				FA63BD24201245E9002EE0DA /* TodoSiri */,
 			);
 		};
 /* End PBXProject section */
@@ -315,9 +315,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Todoey/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TodoSiri/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alex.Todoey;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alex.TodoSiri;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -329,9 +329,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Todoey/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TodoSiri/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alex.Todoey;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alex.TodoSiri;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -341,7 +341,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FA63BD20201245E9002EE0DA /* Build configuration list for PBXProject "Todoey" */ = {
+		FA63BD20201245E9002EE0DA /* Build configuration list for PBXProject "TodoSiri" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA63BD35201245E9002EE0DA /* Debug */,
@@ -350,7 +350,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA63BD37201245E9002EE0DA /* Build configuration list for PBXNativeTarget "Todoey" */ = {
+		FA63BD37201245E9002EE0DA /* Build configuration list for PBXNativeTarget "TodoSiri" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA63BD38201245E9002EE0DA /* Debug */,

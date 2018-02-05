@@ -10,14 +10,20 @@ import UIKit
 import CoreData
 
 class CategoryViewController: UITableViewController {
-    var categories = [Category]()
-    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    var categories = DatabaseHelper.shared.categories
+    
+//    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
+    
+//    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let context = DatabaseHelper.shared.persistentContainer.viewContext
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadCategories()
+        DatabaseHelper.shared.loadCategories()
+        categories = DatabaseHelper.shared.categories
+        tableView.reloadData()
     }
 
     //MARK: - TableView Datasource Methods
@@ -81,15 +87,15 @@ class CategoryViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    func loadCategories(with request: NSFetchRequest<Category> = Category.fetchRequest()){
-        do{
-            categories = try context.fetch(request)
-        }
-        catch{
-            print("Error fetching dta from context \(error)")
-        }
-        tableView.reloadData()
-    }
+//    func loadCategories(with request: NSFetchRequest<Category> = Category.fetchRequest()){
+//        do{
+//            categories = try context.fetch(request)
+//        }
+//        catch{
+//            print("Error fetching dta from context \(error)")
+//        }
+//        tableView.reloadData()
+//    }
 }
 
 

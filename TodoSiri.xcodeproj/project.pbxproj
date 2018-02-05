@@ -12,9 +12,38 @@
 		FA63BD2E201245E9002EE0DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA63BD2C201245E9002EE0DA /* Main.storyboard */; };
 		FA63BD30201245E9002EE0DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA63BD2F201245E9002EE0DA /* Assets.xcassets */; };
 		FA63BD33201245E9002EE0DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA63BD31201245E9002EE0DA /* LaunchScreen.storyboard */; };
+		FA76E1BA2028674800CE5F83 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76E1B92028674800CE5F83 /* DatabaseHelper.swift */; };
+		FA76E1BB2028674800CE5F83 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76E1B92028674800CE5F83 /* DatabaseHelper.swift */; };
+		FAC5986D2023235D007068EE /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5986C2023235D007068EE /* IntentHandler.swift */; };
+		FAC598712023235D007068EE /* Siri.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FAC5986A2023235D007068EE /* Siri.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FAC598772023245C007068EE /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAFBD5A82016180400CC6389 /* DataModel.xcdatamodeld */; };
 		FAFBD5AA2016180400CC6389 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAFBD5A82016180400CC6389 /* DataModel.xcdatamodeld */; };
 		FAFBD5CD2016446000CC6389 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFBD5CC2016446000CC6389 /* CategoryViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FAC5986F2023235D007068EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA63BD1D201245E9002EE0DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAC598692023235D007068EE;
+			remoteInfo = Siri;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FAC598752023235D007068EE /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FAC598712023235D007068EE /* Siri.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		FA63BD25201245E9002EE0DA /* TodoSiri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoSiri.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,12 +53,25 @@
 		FA63BD2F201245E9002EE0DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA63BD32201245E9002EE0DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA63BD34201245E9002EE0DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA76E1B92028674800CE5F83 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
+		FAC5986520232308007068EE /* TodoSiri.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodoSiri.entitlements; sourceTree = "<group>"; };
+		FAC5986A2023235D007068EE /* Siri.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Siri.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAC5986C2023235D007068EE /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		FAC5986E2023235D007068EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAC5987620232365007068EE /* Siri.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Siri.entitlements; sourceTree = "<group>"; };
 		FAFBD5A92016180400CC6389 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		FAFBD5CC2016446000CC6389 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		FA63BD22201245E9002EE0DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAC598672023235D007068EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				FA63BD27201245E9002EE0DA /* TodoSiri */,
+				FAC5986B2023235D007068EE /* Siri */,
 				FA63BD26201245E9002EE0DA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				FA63BD25201245E9002EE0DA /* TodoSiri.app */,
+				FAC5986A2023235D007068EE /* Siri.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,6 +102,7 @@
 		FA63BD27201245E9002EE0DA /* TodoSiri */ = {
 			isa = PBXGroup;
 			children = (
+				FAC5986520232308007068EE /* TodoSiri.entitlements */,
 				FA63BD28201245E9002EE0DA /* AppDelegate.swift */,
 				FAFBD5A52015EA5000CC6389 /* Controllers */,
 				FAFBD5A62015EA6600CC6389 /* Views */,
@@ -68,10 +113,21 @@
 			path = TodoSiri;
 			sourceTree = "<group>";
 		};
+		FAC5986B2023235D007068EE /* Siri */ = {
+			isa = PBXGroup;
+			children = (
+				FAC5987620232365007068EE /* Siri.entitlements */,
+				FAC5986C2023235D007068EE /* IntentHandler.swift */,
+				FAC5986E2023235D007068EE /* Info.plist */,
+			);
+			path = Siri;
+			sourceTree = "<group>";
+		};
 		FAFBD5A42015EA3100CC6389 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
 				FAFBD5A82016180400CC6389 /* DataModel.xcdatamodeld */,
+				FA76E1B92028674800CE5F83 /* DatabaseHelper.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -112,15 +168,34 @@
 				FA63BD21201245E9002EE0DA /* Sources */,
 				FA63BD22201245E9002EE0DA /* Frameworks */,
 				FA63BD23201245E9002EE0DA /* Resources */,
+				FAC598752023235D007068EE /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FAC598702023235D007068EE /* PBXTargetDependency */,
 			);
 			name = TodoSiri;
 			productName = Todoey;
 			productReference = FA63BD25201245E9002EE0DA /* TodoSiri.app */;
 			productType = "com.apple.product-type.application";
+		};
+		FAC598692023235D007068EE /* Siri */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAC598722023235D007068EE /* Build configuration list for PBXNativeTarget "Siri" */;
+			buildPhases = (
+				FAC598662023235D007068EE /* Sources */,
+				FAC598672023235D007068EE /* Frameworks */,
+				FAC598682023235D007068EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Siri;
+			productName = Siri;
+			productReference = FAC5986A2023235D007068EE /* Siri.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -135,6 +210,20 @@
 					FA63BD24201245E9002EE0DA = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Siri = {
+								enabled = 1;
+							};
+						};
+					};
+					FAC598692023235D007068EE = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -152,6 +241,7 @@
 			projectRoot = "";
 			targets = (
 				FA63BD24201245E9002EE0DA /* TodoSiri */,
+				FAC598692023235D007068EE /* Siri */,
 			);
 		};
 /* End PBXProject section */
@@ -167,6 +257,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FAC598682023235D007068EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -175,13 +272,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAFBD5CD2016446000CC6389 /* CategoryViewController.swift in Sources */,
+				FA76E1BA2028674800CE5F83 /* DatabaseHelper.swift in Sources */,
 				FA63BD2B201245E9002EE0DA /* TotoListViewController.swift in Sources */,
 				FAFBD5AA2016180400CC6389 /* DataModel.xcdatamodeld in Sources */,
 				FA63BD29201245E9002EE0DA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FAC598662023235D007068EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAC5986D2023235D007068EE /* IntentHandler.swift in Sources */,
+				FA76E1BB2028674800CE5F83 /* DatabaseHelper.swift in Sources */,
+				FAC598772023245C007068EE /* DataModel.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FAC598702023235D007068EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAC598692023235D007068EE /* Siri */;
+			targetProxy = FAC5986F2023235D007068EE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FA63BD2C201245E9002EE0DA /* Main.storyboard */ = {
@@ -313,8 +429,11 @@
 		FA63BD38201245E9002EE0DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TodoSiri/TodoSiri.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LHMKQ2T32Y;
 				INFOPLIST_FILE = "$(SRCROOT)/TodoSiri/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alex.TodoSiri;
@@ -327,12 +446,47 @@
 		FA63BD39201245E9002EE0DA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TodoSiri/TodoSiri.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LHMKQ2T32Y;
 				INFOPLIST_FILE = "$(SRCROOT)/TodoSiri/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alex.TodoSiri;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FAC598732023235D007068EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Siri/Siri.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LHMKQ2T32Y;
+				INFOPLIST_FILE = Siri/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alex.TodoSiri.Siri;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FAC598742023235D007068EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Siri/Siri.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LHMKQ2T32Y;
+				INFOPLIST_FILE = Siri/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alex.TodoSiri.Siri;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -355,6 +509,15 @@
 			buildConfigurations = (
 				FA63BD38201245E9002EE0DA /* Debug */,
 				FA63BD39201245E9002EE0DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAC598722023235D007068EE /* Build configuration list for PBXNativeTarget "Siri" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAC598732023235D007068EE /* Debug */,
+				FAC598742023235D007068EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

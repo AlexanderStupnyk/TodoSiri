@@ -11,14 +11,19 @@ import CoreData
 
 class TodoListViewController: UITableViewController {
     
-    var itemArray = [Item]()
+    var itemArray = DatabaseHelper.shared.itemArray
+    
     var selectedCategory : Category? {
         didSet{
-            loadItems()
+            DatabaseHelper.shared.loadItems(categoryName: selectedCategory!.name!)
+            itemArray = DatabaseHelper.shared.itemArray
+            tableView.reloadData()
         }
     }
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+//    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let context = DatabaseHelper.shared.persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,35 +84,38 @@ class TodoListViewController: UITableViewController {
     }
     
     func saveItems(){
-        do{
-            try context.save()
-        }
-        catch{
-            print("Error dsving context, \(error)")
-        }
+//        do{
+//            try context.save()
+//        }
+//        catch{
+//            print("Error dsving context, \(error)")
+//        }
+        
+        DatabaseHelper.shared.saveItems()
+        itemArray = DatabaseHelper.shared.itemArray
         
         self.tableView.reloadData()
     }
     
-    func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest(), predicate: NSPredicate? = nil){
-        let categoryPredicate = NSPredicate(format: "parentCategory.name MATCHES %@", selectedCategory!.name!)
-        
-        if let additionalPredicate = predicate {
-            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [categoryPredicate, additionalPredicate])
-        }
-        else{
-            request.predicate = categoryPredicate
-        }
-
-        
-        do{
-            itemArray = try context.fetch(request)
-        }
-        catch{
-            print("Error fetching dta from context \(error)")
-        }
-        tableView.reloadData()
-    }
+//    func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest(), predicate: NSPredicate? = nil){
+//        let categoryPredicate = NSPredicate(format: "parentCategory.name MATCHES %@", selectedCategory!.name!)
+//        
+//        if let additionalPredicate = predicate {
+//            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [categoryPredicate, additionalPredicate])
+//        }
+//        else{
+//            request.predicate = categoryPredicate
+//        }
+//
+//        
+//        do{
+//            itemArray = try context.fetch(request)
+//        }
+//        catch{
+//            print("Error fetching dta from context \(error)")
+//        }
+//        tableView.reloadData()
+//    }
     
     
 }
@@ -118,12 +126,14 @@ extension TodoListViewController: UISearchBarDelegate{
         let request : NSFetchRequest<Item> = Item.fetchRequest()
         let predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
         request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
-        loadItems(with: request, predicate: predicate)
+        DatabaseHelper.shared.loadItems(categoryName: selectedCategory!.name!, with: request, predicate: predicate)
+        itemArray = DatabaseHelper.shared.itemArray
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text?.count == 0{
-            loadItems()
+            DatabaseHelper.shared.loadItems(categoryName: selectedCategory!.name!)
+            itemArray = DatabaseHelper.shared.itemArray
             DispatchQueue.main.async {
                 searchBar.resignFirstResponder()
             }

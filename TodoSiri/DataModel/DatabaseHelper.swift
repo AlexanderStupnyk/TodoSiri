@@ -71,7 +71,7 @@ class DatabaseHelper: NSObject {
             categories = try context.fetch(request)
         }
         catch{
-            print("Error fetching dta from context \(error)")
+            print("Error fetching data from context \(error)")
         }
     }
     
@@ -86,27 +86,15 @@ class DatabaseHelper: NSObject {
             request.predicate = categoryPredicate
         }
         
-        
         do{
             itemArray = try context.fetch(request)
         }
         catch{
-            print("Error fetching dta from context \(error)")
+            print("Error fetching data from context \(error)")
         }
     }
     
-    func saveItems(){
-        let context = persistentContainer.viewContext
-        do{
-            try context.save()
-        }
-        catch{
-            print("Error dsving context, \(error)")
-        }
-        
-    }
-    
-    
+
     func createList(name: String) -> Category? {
         let context = persistentContainer.viewContext
         let newCategory = Category(context: context)
@@ -116,7 +104,7 @@ class DatabaseHelper: NSObject {
             return newCategory
         }
         catch{
-            print("Error sving context, \(error)")
+            print("Error saving context, \(error)")
         }
         return nil
     }
@@ -131,10 +119,23 @@ class DatabaseHelper: NSObject {
                 newItem.title = taskName
                 newItem.done = false
                 newItem.parentCategory = category
-                saveItems()
+                saveContext()
             }
         }
     }
+    
+    func finish(taskName: String) {
+        for category in categories {
+            loadItems(categoryName: category.name!)
+            if let item = itemArray.first(where: {$0.title == taskName}) {
+                item.done = true
+                saveContext()
+                break
+            }
+        }
+    }
+    
+    
     
 }
 

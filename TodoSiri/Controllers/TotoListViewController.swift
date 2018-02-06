@@ -84,39 +84,10 @@ class TodoListViewController: UITableViewController {
     }
     
     func saveItems(){
-//        do{
-//            try context.save()
-//        }
-//        catch{
-//            print("Error dsving context, \(error)")
-//        }
-        
-        DatabaseHelper.shared.saveItems()
+        DatabaseHelper.shared.saveContext()
         itemArray = DatabaseHelper.shared.itemArray
-        
         self.tableView.reloadData()
     }
-    
-//    func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest(), predicate: NSPredicate? = nil){
-//        let categoryPredicate = NSPredicate(format: "parentCategory.name MATCHES %@", selectedCategory!.name!)
-//        
-//        if let additionalPredicate = predicate {
-//            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [categoryPredicate, additionalPredicate])
-//        }
-//        else{
-//            request.predicate = categoryPredicate
-//        }
-//
-//        
-//        do{
-//            itemArray = try context.fetch(request)
-//        }
-//        catch{
-//            print("Error fetching dta from context \(error)")
-//        }
-//        tableView.reloadData()
-//    }
-    
     
 }
 

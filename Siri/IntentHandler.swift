@@ -2,8 +2,6 @@
 //  IntentHandler.swift
 //  Siri
 //
-//  Created by Martin Mitrevski on 24.06.17.
-//  Copyright © 2017 Martin Mitrevski. All rights reserved.
 //
 
 import Intents
@@ -46,7 +44,7 @@ extension IntentHandler : INCreateTaskListIntentHandling {
             return
         }
         
-//        ListsManager.sharedInstance.createList(name: title.spokenPhrase)
+        //        ListsManager.sharedInstance.createList(name: title.spokenPhrase)
         let newCategory = DatabaseHelper.shared.createList(name: title.spokenPhrase)
         
         print("Save list \(title.spokenPhrase)")
@@ -58,21 +56,9 @@ extension IntentHandler : INCreateTaskListIntentHandling {
                 return taskTitle.spokenPhrase
             }
             tasks = createTasks(fromTitles: taskTitlesStrings)
-//            ListsManager.sharedInstance.add(tasks: taskTitlesStrings, toList: title.spokenPhrase)
-                       
-            for taskTitle in taskTitlesStrings {
-                let newItem = Item(context: self.context)
-                newItem.title = taskTitle
-                newItem.done = false
-                newItem.parentCategory = newCategory
-                do{
-                    print(newItem)
-                    try context.save()
-                }
-                catch{
-                    print("Error dsving context, \(error)")
-                }
-            }
+            //            ListsManager.sharedInstance.add(tasks: taskTitlesStrings, toList: title.spokenPhrase)
+            
+            DatabaseHelper.shared.add(tasks: taskTitlesStrings, toList: title.spokenPhrase)
             
             print("Save task \(taskTitlesStrings) to the list \(title.spokenPhrase)")
         }
@@ -108,8 +94,8 @@ extension IntentHandler : INAddTasksIntentHandling {
                 return taskTitle.spokenPhrase
             }
             tasks = createTasks(fromTitles: taskTitlesStrings)
-//            ListsManager.sharedInstance.add(tasks: taskTitlesStrings, toList: title.spokenPhrase)
-
+            //            ListsManager.sharedInstance.add(tasks: taskTitlesStrings, toList: title.spokenPhrase)
+            
             DatabaseHelper.shared.add(tasks: taskTitlesStrings, toList: title.spokenPhrase)
             print("Saved one task \(taskTitlesStrings) to the \(title.spokenPhrase)")
         }
@@ -135,7 +121,9 @@ extension IntentHandler : INSetTaskAttributeIntentHandling {
         let status = intent.status
         
         if status == .completed {
-//            ListsManager.sharedInstance.finish(task: title.spokenPhrase)
+            //            ListsManager.sharedInstance.finish(task: title.spokenPhrase)
+            
+            DatabaseHelper.shared.finish(taskName: title.spokenPhrase)
             print("Complete task \(title.spokenPhrase)")
         }
         let response = INSetTaskAttributeIntentResponse(code: .success, userActivity: nil)
